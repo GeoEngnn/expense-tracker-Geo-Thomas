@@ -1,0 +1,260 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa; 
+    background-image: url("https://media.licdn.com/dms/image/v2/D5612AQGplp7JKG6Iiw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1673950361361?e=2147483647&v=beta&t=L4d5P81GijVgU4u1yJtFLVsIqATkfWTrymEPSd_C6_o");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    color: #1f2937;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+}
+
+.app-header {
+    background-color: #2563eb;
+    color: white;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.app-header h1 {
+    margin-bottom: 0.25rem;
+}
+
+.app-header p {
+    opacity: 0.9;
+}
+
+section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.section-header {
+    margin-bottom: 1.25rem;
+}
+
+.section-header h2 {
+    font-size: 1.25rem;
+}
+
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+.summary-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.summary-card h2,
+.summary-card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.summary-card p {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+#transaction-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid #2563eb;
+    border-color: #2563eb;
+}
+
+#description,
+#description-error {
+    grid-column: span 2;
+}
+
+.form-actions {
+    grid-column: span 2;
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+button {
+    border: none;
+    border-radius: 6px;
+    padding: 0.7rem 1.2rem;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#submit-button {
+    background-color: #2563eb;
+    color: white;
+}
+
+#cancel-edit-button {
+    background-color: #6b7280;
+    color: white;
+}
+
+.error-message {
+    min-height: 1.2rem;
+    margin-top: 0.25rem;
+    color: #dc2626;
+    font-size: 0.85rem;
+}
+
+.filters {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.transaction-table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 0.85rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+    background-color: #f3f4f6;
+    font-weight: 600;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 1.5rem;
+    color: #6b7280;
+}
+
+.monthly-filter {
+    margin-bottom: 1.5rem;
+}
+
+.monthly-filter label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.monthly-filter input {
+    padding: 0.7rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font: inherit;
+}
+
+.monthly-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.chart-section {
+    text-align: center;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+    margin: 1rem auto 0;
+}
+
+@media (max-width: 768px) {
+
+    .dashboard,
+    .monthly-cards {
+        grid-template-columns: 1fr;
+    }
+
+    #transaction-form,
+    .filters {
+        grid-template-columns: 1fr;
+    }
+
+    #description,
+    #description-error,
+    .form-actions {
+        grid-column: span 1;
+    }
+
+    .app-header {
+        padding: 1.5rem 0;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    th,
+    td {
+        padding: 0.65rem;
+        font-size: 0.9rem;
+    }
+}
