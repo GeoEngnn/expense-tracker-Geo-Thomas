@@ -1,7 +1,7 @@
 const STORAGE_KEY = "expenseTrackerTransactions";
 
 
-function getTransactions() {
+export function getTransactions() {
     const storedTransactions = localStorage.getItem(STORAGE_KEY);
 
     if (!storedTransactions) {
@@ -17,7 +17,7 @@ function getTransactions() {
 }
 
 
-function saveTransactions(transactions) {
+export function saveTransactions(transactions) {
     localStorage.setItem(
         STORAGE_KEY,
         JSON.stringify(transactions)
@@ -25,6 +25,6 @@ function saveTransactions(transactions) {
 }
 
 
-function clearTransactions() {
+export function clearTransactions() {
     localStorage.removeItem(STORAGE_KEY);
 }

@@ -1,4 +1,4 @@
-function validateTransaction(data) {
+export function validateTransaction(data) {
 
     const errors = {};
 
@@ -14,9 +14,14 @@ function validateTransaction(data) {
 
         errors.amount = "Amount must be a valid number.";
 
-    } else if (Number(data.amount) <= 0) {
+    } else if (Number(data.amount) < 0.5) {
 
-        errors.amount = "Amount must be greater than 0.";
+    errors.amount = "Amount must be at least ₹0.50.";
+
+    } else if (Number(data.amount) % 0.5 !== 0) {
+
+    errors.amount = "Amount must be in increments of ₹0.50.";
+
     }
 
     if (!data.category || data.category.trim() === "") {

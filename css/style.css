@@ -238,6 +238,18 @@ th {
         grid-template-columns: 1fr;
     }
 
+      .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+
+    .chart-container {
+        height: 300px;
+    }
+
     #description,
     #description-error,
     .form-actions {
@@ -256,5 +268,31 @@ th {
     td {
         padding: 0.65rem;
         font-size: 0.9rem;
-    }
+
+}
+.edit-button,
+.delete-button {
+    margin-right: 0.4rem;
+    margin-bottom: 0.25rem;
+}
+
+.edit-button {
+    background-color: #2563eb;
+    color: white;
+}
+
+.delete-button {
+    background-color: #dc2626;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:focus-visible {
+    outline: 2px solid #111827;
+    outline-offset: 2px;
+}
+
 }

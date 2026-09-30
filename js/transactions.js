@@ -1,14 +1,14 @@
-let transactions = [];
+export let transactions = [];
 
 
-function addTransaction(transaction) {
+export function addTransaction(transaction) {
     transactions.push(transaction);
 
     return transaction;
 }
 
 
-function updateTransaction(id, updatedData) {
+export function updateTransaction(id, updatedData) {
     const transactionIndex = transactions.findIndex(
         transaction => transaction.id === id
     );
@@ -26,7 +26,7 @@ function updateTransaction(id, updatedData) {
 }
 
 
-function deleteTransaction(id) {
+export function deleteTransaction(id) {
     const transactionIndex = transactions.findIndex(
         transaction => transaction.id === id
     );
@@ -41,12 +41,12 @@ function deleteTransaction(id) {
 }
 
 
-function getTransactions() {
+export function getTransactions() {
     return transactions;
 }
 
 
-function getFilteredTransactions(type = "all", category = "all") {
+export function getFilteredTransactions(type = "all", category = "all") {
     return transactions.filter(transaction => {
 
         const matchesType =
@@ -60,20 +60,20 @@ function getFilteredTransactions(type = "all", category = "all") {
 }
 
 
-function calculateTotalIncome() {
+export function calculateTotalIncome() {
     return transactions
         .filter(transaction => transaction.type === "income")
         .reduce((total, transaction) => total + transaction.amount, 0);
 }
 
 
-function calculateTotalExpenses() {
+export function calculateTotalExpenses() {
     return transactions
         .filter(transaction => transaction.type === "expense")
         .reduce((total, transaction) => total + transaction.amount, 0);
 }
 
 
-function calculateBalance() {
+export function calculateBalance() {
     return calculateTotalIncome() - calculateTotalExpenses();
 }
